@@ -1,0 +1,36 @@
+{% extends 'layout.html' %}
+
+{% block cart %}
+<div style="height: 500px; width:500px" class="container-fluid">
+    <table class="table table-sm">
+        <thead>
+            <tr>
+                <th style="width: 5px" scope="col">Item Name</th>
+                <th style="width: 5px" scope="col">Item Type</th>
+                <th style="width: 5px" scope="col">Qty</th>
+                <th style="width: 5px" scope="col">Price</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% if 'cart' in cart_items %}
+                {% for item in cart_items.cart %}
+                <tr>
+                    <td>{{item.name}}</td>
+                    <td>{{item.itemType}}</td>
+                    <td>{{item.quantity}}</td>
+                    <td>{{item.price}}</td>
+                    
+                </tr>
+                {% endfor %}
+            {% endif %}
+        </tbody>
+    </table>
+    {% if 'cart' in cart_items %}
+    <a style="margin-left: 200px;" href="{{order_service}}" class="btn btn-info" role="button">Checkout</a>
+    {% else %}
+    <p style="margin-left: 200px" id="no-items">Your cart is empty....</p>
+    {% endif %}
+</div>
+<!-- <p>{{cart_items}}</p> -->
+
+{% endblock %}

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <style>
+        #navBarAccount {
+            margin-left: 1000px;
+        }
+      
+        .container.text-center {
+            margin-top: 100px;
+            margin-left: 300px;
+            /* margin-right: 50px; */
+        }
+        .table {
+          margin-top: 100px;
+          margin-left: 20px;
+        }
+    </style>
+    <title>Unpopular</title>
+</head>
+<body>
+   
+
+    <nav class="navbar navbar-expand-lg bg-light">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">The Unpopular</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link" href="{{homepage}}">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{{bookpage}}">Book</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{{stationerypage}}">Stationery</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{{filepage}}">Files</a>
+              </li>
+             
+            </ul>
+          </div>
+
+          <div class="collapse navbar-collapse" id="navBarAccount">
+            <ul class="navbar-nav" >
+                <li class="nav-item">
+                    <a class="nav-link" href="{{store_cart}}">Cart</a>
+                  </li>
+                <li class="nav-item" >
+                    <a id="username" value="{{username}}" class="nav-link" href="#">{{username}}</a>
+                </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+      {% block home %}{% endblock %}
+      {% block itemContent %}{% endblock %}
+      {% block cart %}{% endblock %}
+      <!-- <div class="container text-center">
+        <div class="row row-cols-3">
+            <div class="col">
+                <div class="shadow-lg flex-column sm-1">
+                    <img class="rounded" src="/static/pens-books.jpg" alt="Pens & Books" width="200" height="200">
+                    <div class="p-2">Flex item 2</div>
+                    <div class="p-2">Flex item 3</div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="shadow-lg flex-column sm-1">
+                    <img class="rounded" src="/static/pens-books.jpg" alt="Pens & Books" width="200" height="200">
+                    <div class="p-2">Flex item 2</div>
+                    <div class="p-2">Flex item 3</div>
+                </div>
+              
+            </div>
+          
+            
+        </div>
+      </div> -->
+    {% block script %}{% endblock %}
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+</body>
+</html>
